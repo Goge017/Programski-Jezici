@@ -1,22 +1,49 @@
-
-7 zadatak
+Zadatak 8
 
 public class Kvadrat {
-private double a;
-public Kvadrat (double a)
-{this.a = a;}
-public double povrsina()
-{return Math.pow(a,2);}
+    private double a;
+
+    public Kvadrat(double a) {
+        this.a = a;
+    }
+
+    public double povrsina() {
+        return Math.pow(a, 2);
+    }
+
+//Za ucitavanje iz binarnog fajla koristimo DataInputStream
+public void UcitajIzBinarnogFajla(DataInputStream in) throws IOException {  
+thiis.a = in.readDouble();
 }
 
-public class Kocka extends Kvadrat
-{
-public class Kocka (double a)          Greska u konstruktoru: Treba public class Kocka (double a) {super (a);}
-{this.a = a;}
-					Pozeljno je dodati ovde @Override
-public double povrsina()  
-{return 6*povrsina();}								return 6*super.povrsina();
-
+// Za ucitavanje iz tekstualnog fajla koristimo BufferReader
+public void UcitajIzTekstualnogFajla(BufferReader in) throws IOException {   
+this.a = Double.parseDouble(in.readLine());
 }
+
+public class Kocka extends Kvadrat {
+    public Kocka(double a) {
+        super(a);
+    }
+
+    @Override
+    public double povrsina() {
+        return 6 * super.povrsina();
+    }
+}
+
+
+
+    // Metoda za upisivanje atributa u binarni tok podataka
+    public void upisiUBinarniTok(DataOutputStream out) throws IOException {
+        out.writeDouble(a);
+    }
+
+    // Metoda za upisivanje atributa u tekstualni tok podataka
+    public void upisiUTekstualniTok(BufferedWriter out) throws IOException {
+        out.write(Double.toString(a));
+        out.newLine();
+    }
+
 
 
