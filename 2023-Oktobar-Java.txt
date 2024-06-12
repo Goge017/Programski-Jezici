@@ -1,4 +1,4 @@
-Zadatak 8
+Zadatak 9
 
 public class Kvadrat {
     private double a;
@@ -10,6 +10,16 @@ public class Kvadrat {
     public double povrsina() {
         return Math.pow(a, 2);
     }
+
+public void izracunajPovrsinuUThreadu() {
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                double povrsina = povrsina();
+                System.out.println("Površina kocke je: " + povrsina);
+            }
+        };
+        thread.start();
 
 //Za ucitavanje iz binarnog fajla koristimo DataInputStream
 public void UcitajIzBinarnogFajla(DataInputStream in) throws IOException {  
