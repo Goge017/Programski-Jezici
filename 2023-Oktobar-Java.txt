@@ -1,0 +1,22 @@
+
+7 zadatak
+
+public class Kvadrat {
+private double a;
+public Kvadrat (double a)
+{this.a = a;}
+public double povrsina()
+{return Math.pow(a,2);}
+}
+
+public class Kocka extends Kvadrat
+{
+public class Kocka (double a)          Greska u konstruktoru: Treba public class Kocka (double a) {super (a);}
+{this.a = a;}
+																			Pozeljno je dodati ovde @Override
+public double povrsina()  
+{return 6*povrsina();}								return 6*super.povrsina();
+
+}
+
+
