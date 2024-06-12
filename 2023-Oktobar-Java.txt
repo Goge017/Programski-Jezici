@@ -13,7 +13,7 @@ public class Kocka extends Kvadrat
 {
 public class Kocka (double a)          Greska u konstruktoru: Treba public class Kocka (double a) {super (a);}
 {this.a = a;}
-																			Pozeljno je dodati ovde @Override
+					Pozeljno je dodati ovde @Override
 public double povrsina()  
 {return 6*povrsina();}								return 6*super.povrsina();
 
